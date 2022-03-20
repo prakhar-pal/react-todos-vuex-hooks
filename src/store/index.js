@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { actionTypes } from '../actions';
 
 Vue.use(Vuex);
 
@@ -14,9 +15,13 @@ const store = new Vuex.Store({
     countGratherThan2: (state/* , getters */) => state.count > 2,
   },
   mutations: {
-    increment(state) {
+    increment(state, payload=1) {
       // eslint-disable-next-line no-param-reassign, no-plusplus
-      state.count++;
+      state.count+=payload;
+    },
+    decrement(state, payload=-1) {
+      // eslint-disable-next-line no-param-reassign, no-plusplus
+      state.count-=payload;
     },
     incrementStart(state) {
       // eslint-disable-next-line no-param-reassign
@@ -67,6 +72,12 @@ const store = new Vuex.Store({
     SET_VISIBILITY_FILTER({ commit }, payload) {
       commit('setVisibilityFilter', payload);
     },
+    [actionTypes.INCREMENT]: ({ commit }, payload) => {
+      commit("increment", payload);
+    },
+    [actionTypes.DECREMENT]: ({ commit }, payload) => {
+      commit("decrement", payload);
+    }
   },
 });
 

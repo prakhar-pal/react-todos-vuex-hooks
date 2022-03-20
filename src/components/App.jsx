@@ -1,12 +1,10 @@
 import React from 'react';
-import Footer from './Footer';
-import AddTodo from '../containers/AddTodo';
-import VisibleTodoList from '../containers/VisibleTodoList';
+import Counter from './Counter';
+import CountGreaterThan2 from './CountGreaterThan2';
 
 export default () => (
   <div>
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
+    <Counter />
+    <CountGreaterThan2 />
   </div>
 );
