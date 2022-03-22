@@ -1,3 +1,9 @@
+/*
+* Copyright (c) 2022
+* Author: Prakhar Pal
+* GitHub: prakhar-pal
+* The contents of this file are licensed under MIT
+*/
 import { useState, useEffect, useCallback } from "react";
 import { dequal } from "dequal";
 import store from "../../store";
