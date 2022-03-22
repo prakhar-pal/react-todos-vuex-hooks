@@ -12,14 +12,14 @@ const store = new Vuex.Store({
     visibilityFilter: 'SHOW_ALL',
   },
   getters: {
-    countGratherThan2: (state/* , getters */) => state.count > 2,
+    countGreaterThan2: (state/* , getters */) => state.count > 2,
   },
   mutations: {
     increment(state, payload=1) {
       // eslint-disable-next-line no-param-reassign, no-plusplus
       state.count+=payload;
     },
-    decrement(state, payload=-1) {
+    decrement(state, payload=1) {
       // eslint-disable-next-line no-param-reassign, no-plusplus
       state.count-=payload;
     },
